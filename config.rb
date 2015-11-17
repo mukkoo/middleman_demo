@@ -17,6 +17,12 @@ set :coffeescript, format: :js
 
 Slim::Engine.disable_option_validator!
 
+activate :directory_indexes
+
+page "/*", layout: "page"
+page "/", layout: "home"
+page "/sitemap.xml", :layout => false
+
 configure :build do
   activate :minify_css
   activate :minify_javascript
