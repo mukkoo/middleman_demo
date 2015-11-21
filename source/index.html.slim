@@ -1,0 +1,15 @@
+---
+title: Welcome to Middleman
+my_list:
+  - one
+  - two
+  - three
+---
+
+.welcome
+  h1= data.home.title
+  p.doc= link_to "Read Online Documentation", "http://middlemanapp.com/"
+  p= data.home.content
+  ul
+    - current_page.data.my_list.each do |f|
+      li= f
