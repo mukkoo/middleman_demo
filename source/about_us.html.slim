@@ -2,3 +2,6 @@
 h1 Chi siamo
 = image_tag "placeholder.jpg"
 p= lorem.sentences 30
+ul
+  - data.team.members.each do |member|
+    li= link_to member, "/about_us/#{member}"

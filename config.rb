@@ -21,7 +21,13 @@ activate :directory_indexes
 
 page "/*", layout: "page"
 page "/", layout: "home"
-page "/sitemap.xml", :layout => false
+page "/sitemap.xml", layout: false
+
+data.team.members.each do |name|
+  proxy "/about_us/#{name}.html", "/member.html", locals: { name: name }
+end
+
+ignore "/member.html"
 
 configure :build do
   activate :minify_css
