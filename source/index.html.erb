@@ -1,5 +1,9 @@
 ---
 title: Welcome to Middleman
+my_list:
+  - one
+  - two
+  - three
 ---
 
 <div class="welcome">
@@ -9,5 +13,9 @@ title: Welcome to Middleman
   </p>
   <p>
     <%= data.home.content %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+    <ul>
+      <% current_page.data.my_list.each do |f| %>
+        <li><%= f %></li>
+      <% end %>
+  </p>
+</div>
